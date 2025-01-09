@@ -10,12 +10,17 @@
   
   /* Resto del CSS */
 
-  /* *{
+  body{
     display: grid;
-    grid-template-columns: repeat(200px, 1fr) ;
-    grid-template-rows: repeat(200px, 1fr) ;
+    grid-template-columns: repeat(250px, 1fr) ;
+    grid-template-rows:
+    300px
+    300px
+    300px ;
+    
   }
-   */
+  
+  
   header{
     display: grid;
     grid-area: my-header ;
@@ -33,6 +38,9 @@
     grid-area: my-footer ;
   }
   
+  img{
+
+  }
   /* .school {
     background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
   }

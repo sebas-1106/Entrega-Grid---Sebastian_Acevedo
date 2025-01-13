@@ -1,65 +1,131 @@
 :root {
-    --primary-color: rgb(236, 236, 236);
-    --secondary-color: rgb(21, 21, 21);
-    --blue-color: #2bc5cd;
-    --orange-color: #ff693d;
-    --border: 2px solid var(--blue-color);
-    --spacing: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --blue-color: #2bc5cd;
+  --orange-color: #ff693d;
+  --border: 2px solid var(--blue-color);
+  --spacing: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: grid;
+  gap: var(--spacing);
+  min-width: 50vw;
+  min-height: 100vh;
+}
+body {
+  grid-template:
+    'header' auto
+    'school' 300px
+    'student' 300px
+    'main' 200px
+    'time' 300px
+    'alumni' 300px
+    'footer' 270px;
+}
+header {
+  color: var(--primary-color);
+  background-color: var(--blue-color);
+}
+header > p {
+  margin-top: 50%;
+}
+.school {
+  grid-area: school;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+.student {
+  grid-area: student;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+main {
+  border: var(--border);
+  color: var(--blue-color);
+  text-align: center;
+  align-content: center;
+}
+.time {
+  grid-area: time;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+.alumni {
+  grid-area: alumni;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+footer {
+  background-color: var(--orange-color);
+  color: var(--primary-color);
+}
+button {
+  border: 1px;
+  padding: 30px;
+  font-size: 15px;
+  margin: 10px;
+}
+@media (min-width: 800px) {
+  body {
+    header {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 5;
+      max-width: 400px;
+      max-height: 660px;
+    }
+    .school {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      max-width: 500px;
+      max-height: 600px;
+    }
+    .student {
+      grid-column-start: 5;
+      grid-column-end: 7;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      max-width: 500px;
+      max-height: 600px;
+    }
+    main {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 3;
+      grid-row-end: 5;
+      max-width: 500px;
+      max-height: 300px;
+    }
+    .time {
+      grid-column-start: 5;
+      grid-column-end: 7;
+      grid-row-start: 3;
+      grid-row-end: 5;
+      max-width: 500px;
+      max-height: 300px;
+    }
+    .alumni {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 6;
+      max-width: 400px;
+      max-height: 300px;
+    }
+    footer {
+      grid-column-start: 3;
+      grid-column-end: 7;
+      grid-row-start: 4;
+      grid-row-end: 6;
+      max-height: 300px;
+    }
   }
-  
-  /* Resto del CSS */
+}
 
-  body{
-    display: grid;
-    grid-template-columns: repeat(250px, 1fr) ;
-    grid-template-rows:
-    300px
-    300px
-    300px ;
-    
-  }
-  
-  
-  header{
-    display: grid;
-    grid-area: my-header ;
-    background-color: var(--blue-color);
-    
-  }
-  main{
-
-    border: 2px solid var(--blue-color);
-    color: var(--blue-color);
-    grid-area: my-main ;
-  }
-  footer{
-    background-color: var(--orange-color);
-    grid-area: my-footer ;
-  }
-  
-  img{
-
-  }
-  /* .school {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
-  }
-  
-  .student {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
-  }
-  
-  .time {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
-  }
-  
-  .alumni {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
-  } */
-  
-  .alumni,
-  .school,
-  .student,
-  .time {
-    background-size: cover;
-  }
+/* Resto del CSS*/
+.alumni,
+.school,
+.student,
+.time {
+  background-size: cover;
+}

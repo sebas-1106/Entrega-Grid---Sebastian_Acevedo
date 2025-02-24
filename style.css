@@ -64,61 +64,33 @@ button {
 }
 @media (min-width: 800px) {
   body {
-    header {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 5;
-      max-width: 400px;
-      max-height: 660px;
-    }
-    .school {
-      grid-column-start: 3;
-      grid-column-end: 5;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      max-width: 500px;
-      max-height: 600px;
-    }
-    .student {
-      grid-column-start: 5;
-      grid-column-end: 7;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      max-width: 500px;
-      max-height: 600px;
-    }
-    main {
-      grid-column-start: 3;
-      grid-column-end: 5;
-      grid-row-start: 3;
-      grid-row-end: 5;
-      max-width: 500px;
-      max-height: 300px;
-    }
-    .time {
-      grid-column-start: 5;
-      grid-column-end: 7;
-      grid-row-start: 3;
-      grid-row-end: 5;
-      max-width: 500px;
-      max-height: 300px;
-    }
-    .alumni {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 4;
-      grid-row-end: 6;
-      max-width: 400px;
-      max-height: 300px;
-    }
-    footer {
-      grid-column-start: 3;
-      grid-column-end: 7;
-      grid-row-start: 4;
-      grid-row-end: 6;
-      max-height: 300px;
-    }
+    grid-template:
+      'header header' auto
+      'school student' 300px
+      'main main' 200px
+      'time alumni' 300px
+      'footer footer' 270px;
+  }
+  header {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+  }
+  .school {
+    grid-column: 1; /* Columna de la izquierda */
+  }
+  .student {
+    grid-column: 2; /* Columna de la derecha */
+  }
+  main {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+  }
+  .time {
+    grid-column: 2; /* Columna de la derecha */
+  }
+  .alumni {
+    grid-column: 1; /* Columna de la izquierda */
+  }
+  footer {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
   }
 }
 

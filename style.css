@@ -8,16 +8,17 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  display: grid;
-  gap: var(--spacing);
-  min-width: 50vw;
-  min-height: 100vh;
 }
 body {
+  
+  display: grid;
+  gap: 30px;
+  min-width: 50vw;
+  min-height: 100vh;
   grid-template:
     'header' auto
-    'school' 300px
-    'student' 300px
+    'school' 30%
+    'student' 30%
     'main' 200px
     'time' 300px
     'alumni' 300px
@@ -58,7 +59,7 @@ footer {
 }
 button {
   border: 1px;
-  padding: 30px;
+  padding: 20px;
   font-size: 15px;
   margin: 10px;
 }
@@ -126,8 +127,20 @@ button {
 
 /* Resto del CSS*/
 .alumni,
-.school,
+.school {
+  background-size: contain;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+}
 .student,
 .time {
   background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+

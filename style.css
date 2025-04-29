@@ -8,21 +8,17 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-}
-body {
   
   display: grid;
   gap: 30px;
-  min-width: 50vw;
-  min-height: 100vh;
   grid-template:
     'header' auto
-    'school' 30%
-    'student' 30%
+    'school' 25%
+    'student' 25%
     'main' 200px
     'time' 300px
     'alumni' 300px
-    'footer' 270px;
+    'footer' 280px;
 }
 header {
   color: var(--primary-color);
@@ -34,6 +30,7 @@ header > p {
 .school {
   grid-area: school;
   background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+  background-repeat: no-repeat;
 }
 .student {
   grid-area: student;

@@ -7,8 +7,8 @@
   --spacing: 28px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
-  
   display: grid;
   gap: 30px;
   grid-template:
@@ -20,116 +20,72 @@ body {
     'alumni' 300px
     'footer' 280px;
 }
+
 header {
+  grid-area: header;
   color: var(--primary-color);
   background-color: var(--blue-color);
+  padding: 20px; /* Añadimos padding para mejor presentación */
 }
+
 header > p {
-  margin-top: 50%;
+  margin-top: 20px; /* Ajustamos el margen */
 }
+
 .school {
   grid-area: school;
   background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
   background-repeat: no-repeat;
 }
+
 .student {
   grid-area: student;
   background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
 }
+
 main {
+  grid-area: main;
   border: var(--border);
   color: var(--blue-color);
   text-align: center;
   align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centramos el contenido */
 }
+
 .time {
   grid-area: time;
   background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
 }
+
 .alumni {
   grid-area: alumni;
   background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
 }
+
 footer {
+  grid-area: footer;
   background-color: var(--orange-color);
   color: var(--primary-color);
+  padding: 20px; /* Añadimos padding */
 }
+
 button {
   border: 1px;
   padding: 20px;
   font-size: 15px;
   margin: 10px;
 }
-@media (min-width: 800px) {
-  body {
-    header {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 5;
-      max-width: 400px;
-      max-height: 660px;
-    }
-    .school {
-      grid-column-start: 3;
-      grid-column-end: 5;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      max-width: 500px;
-      max-height: 600px;
-    }
-    .student {
-      grid-column-start: 5;
-      grid-column-end: 7;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      max-width: 500px;
-      max-height: 600px;
-    }
-    main {
-      grid-column-start: 3;
-      grid-column-end: 5;
-      grid-row-start: 3;
-      grid-row-end: 5;
-      max-width: 500px;
-      max-height: 300px;
-    }
-    .time {
-      grid-column-start: 5;
-      grid-column-end: 7;
-      grid-row-start: 3;
-      grid-row-end: 5;
-      max-width: 500px;
-      max-height: 300px;
-    }
-    .alumni {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 4;
-      grid-row-end: 6;
-      max-width: 400px;
-      max-height: 300px;
-    }
-    footer {
-      grid-column-start: 3;
-      grid-column-end: 7;
-      grid-row-start: 4;
-      grid-row-end: 6;
-      max-height: 300px;
-    }
-  }
-}
 
-
-
-/* Resto del CSS*/
 .alumni,
 .school {
   background-size: contain;
   background-position: center;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
+
 .student,
 .time {
   background-size: cover;
@@ -141,3 +97,65 @@ button {
   justify-content: center;
 }
 
+@media (min-width: 800px) {
+  body {
+    /* Redefinimos el grid para pantallas grandes */
+    grid-template-areas:
+      'header header header school school student student'
+      'header header header main main time time'
+      'alumni alumni alumni footer footer footer footer';
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas de igual tamaño */
+    grid-template-rows: 400px 300px 300px; /* Ajustamos las filas para un mejor equilibrio */
+    gap: 30px;
+    min-height: 100vh; /* Aseguramos que ocupe toda la altura */
+  }
+
+  header {
+    grid-area: header;
+    max-width: none;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centramos el contenido del header */
+  }
+
+  .school {
+    grid-area: school;
+    max-width: none;
+    max-height: none;
+    background-size: cover; /* Ajustamos para que la imagen se vea mejor */
+  }
+
+  .student {
+    grid-area: student;
+    max-width: none;
+    max-height: none;
+  }
+
+  main {
+    grid-area: main;
+    max-width: none;
+    max-height: none;
+  }
+
+  .time {
+    grid-area: time;
+    max-width: none;
+    max-height: none;
+  }
+
+  .alumni {
+    grid-area: alumni;
+    max-width: none;
+    max-height: none;
+    background-size: cover; /* Ajustamos para que la imagen se vea mejor */
+  }
+
+  footer {
+    grid-area: footer;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centramos el contenido del footer */
+  }
+}
